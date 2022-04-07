@@ -75,3 +75,9 @@ hashmap.c:58:31: error: ‘size’ undeclared (first use in this function); did 
 hashmap.c:58:31: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 cdf8e27
+Thu Apr  7 16:35:40 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/70
+6ae9b25
