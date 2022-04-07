@@ -52,7 +52,7 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-    HashMap *M=(HashMap*)malloc(sizeof(HashMap));
+    
     
     return 0;
 }
