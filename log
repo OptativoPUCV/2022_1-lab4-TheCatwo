@@ -24,3 +24,18 @@ Thu Apr  7 16:14:42 UTC 2022:
  tests:  0|6
 total_score: 0/70
 ee7c4ef
+Thu Apr  7 16:33:46 UTC 2022: 
+ hashmap.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:14: error: ‘REMAIMER’ undeclared (first use in this function)
+     m->size= REMAIMER;
+              ^~~~~~~~
+hashmap.c:56:14: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:58:31: error: ‘SIZE’ undeclared (first use in this function); did you mean ‘FILE’?
+     m->buckets=(Pair**)malloc(SIZE*sizeof(Pair*));
+                               ^~~~
+                               FILE
+Compilation failed
+69cfe4c
