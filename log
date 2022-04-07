@@ -39,3 +39,17 @@ hashmap.c:58:31: error: ‘SIZE’ undeclared (first use in this function); did 
                                FILE
 Compilation failed
 69cfe4c
+Thu Apr  7 16:34:33 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:14: error: ‘REMAINDER’ undeclared (first use in this function)
+     m->size= REMAINDER;
+              ^~~~~~~~~
+hashmap.c:56:14: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:58:31: error: expected expression before ‘FILE’
+     m->buckets=(Pair**)malloc(FILE*sizeof(Pair*));
+                               ^~~~
+Compilation failed
+6955544
