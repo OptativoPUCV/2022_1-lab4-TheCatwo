@@ -7,3 +7,14 @@ Thu Apr  7 16:08:40 UTC 2022:
  1 file changed, 2 insertions(+), 1 deletion(-)
  tests:  0|0
 4656f9f
+Thu Apr  7 16:09:35 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:14: error: unused variable ‘M’ [-Werror=unused-variable]
+     HashMap *M=(HashMap*)malloc(sizeof(HashMap));
+              ^
+cc1: all warnings being treated as errors
+Compilation failed
+6ecafaa
