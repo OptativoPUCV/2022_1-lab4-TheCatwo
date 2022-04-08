@@ -271,3 +271,9 @@ test.c:(.text+0x19b): undefined reference to `ceil'
 collect2: error: ld returned 1 exit status
 Compilation failed
 7219799
+Fri Apr  8 14:48:34 UTC 2022: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+e65d26b
