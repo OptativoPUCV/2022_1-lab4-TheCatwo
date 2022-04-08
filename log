@@ -443,3 +443,9 @@ hashmap.c:43:22: error: ‘m’ undeclared (first use in this function)
 hashmap.c:43:22: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c3ac835
+Fri Apr  8 17:36:20 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 20/70
+9dc26ad
