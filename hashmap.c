@@ -73,25 +73,7 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  if (map){
-        if (map->buckets){
-            int i = 0;
-            for (i = 0; i<10; i++){
-                HashMap p = map->buckets[i];
-                HashMap *q = NULL;
-                while (p)	{
-                    q = p->next;
-                    p->current = 0;	
-                    p = q;
-                }
-            }
-            free(map->buckets);	
-            map->buckets = NULL;
-        }
-        free(map);		
-		map= NULL;
-    }
-	return;
+  
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
