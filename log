@@ -130,3 +130,29 @@ Fri Apr  8 02:30:26 UTC 2022:
  tests:  0|6
 total_score: 0/70
 1d97768
+Fri Apr  8 04:21:13 UTC 2022: 
+ hashmap.c | 37 +++++++++++++++++++++++++++++++------
+ 1 file changed, 31 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:64:7: error: statement with no effect [-Werror=unused-value]
+       free m;
+       ^~~~
+hashmap.c:64:12: error: expected ‘;’ before ‘m’
+       free m;
+            ^
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:79:27: error: ‘MAX_MAP_SIZE’ undeclared (first use in this function); did you mean ‘_T_SIZE’?
+             for (i = 0; i<MAX_MAP_SIZE; i++){
+                           ^~~~~~~~~~~~
+                           _T_SIZE
+hashmap.c:79:27: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:80:30: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+                 HashMap *p = map->buckets[i];
+                              ^~~
+hashmap.c:83:26: error: ‘HashMap {aka struct HashMap}’ has no member named ‘next’
+                     q = p->next;
+                          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+25f2049

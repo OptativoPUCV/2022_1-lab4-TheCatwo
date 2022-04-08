@@ -53,24 +53,48 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) {
     HashMap *m=(HashMap*)malloc(sizeof(HashMap));
+    if (!m)
+      return NULL;
+    
     m->size=0;
     m->capacity=capacity;
-    m->buckets=(Pair**)malloc(sizeof(Pair*));
+    m->buckets=(Pair**)malloc(capacity* sizeof(Pair*));
   
+    if (!m->buckets){
+      free m;
+      m= NULL;
+      return NULL;
+    }
+      
     int i;
-
-    for (i= 0; i<m->size; i++)
-      m->buckets[i]=NULL;
+    for (i= 0; i<capacity; i++)
+      m->buckets[i]= 0;
     return m;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
-
+  if (map){
+        if (map->buckets){
+            int i = 0;
+            for (i = 0; i<MAX_MAP_SIZE; i++){
+                HashMap *p = map->buckets[i];
+                HashMap *q = NULL;
+                while (p)	{
+                    q = p->next;
+                    p->current = 0;	
+                    p = q;
+                }
+            }
+            free(map->buckets);	
+            map->buckets = NULL;
+        }
+        free(map);		
+		map= NULL;
+    }
+	return;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
 
     return NULL;
 }
