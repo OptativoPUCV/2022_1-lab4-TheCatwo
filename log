@@ -340,3 +340,23 @@ hashmap.c:43:9: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 1e91603
+Fri Apr  8 16:40:31 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:11: error: too few arguments to function ‘hash’
+     int i=hash(key)
+           ^~~~
+hashmap.c:26:6: note: declared here
+ long hash( char * key, long capacity) {
+      ^~~~
+hashmap.c:44:5: error: expected ‘,’ or ‘;’ before ‘if’
+     if( (map->buckets[i] == NULL) || (map->buckets[i]->value == NULL) ){
+     ^~
+hashmap.c:43:9: error: unused variable ‘i’ [-Werror=unused-variable]
+     int i=hash(key)
+         ^
+cc1: all warnings being treated as errors
+Compilation failed
+b19e896
