@@ -239,3 +239,17 @@ Fri Apr  8 04:28:36 UTC 2022:
  tests:  0|6
 total_score: 0/70
 0486094
+Fri Apr  8 14:46:44 UTC 2022: 
+ hashmap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:64:6: error: ‘HashMap {aka struct HashMap}’ has no member named ‘loadFactor’
+     m->loadFactor= (long)ceil(total*0.77);
+      ^~
+hashmap.c:64:31: error: ‘total’ undeclared (first use in this function)
+     m->loadFactor= (long)ceil(total*0.77);
+                               ^~~~~
+hashmap.c:64:31: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3d06e93
