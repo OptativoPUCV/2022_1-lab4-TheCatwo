@@ -314,3 +314,29 @@ Fri Apr  8 15:47:49 UTC 2022:
  tests:  1|5
 total_score: 10/70
 649a72e
+Fri Apr  8 16:40:17 UTC 2022: 
+ hashmap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:16: error: passing argument 1 of ‘hash’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+     int i=hash(map, key)
+                ^~~
+hashmap.c:26:6: note: expected ‘char *’ but argument is of type ‘HashMap * {aka struct HashMap *}’
+ long hash( char * key, long capacity) {
+      ^~~~
+hashmap.c:43:21: error: passing argument 2 of ‘hash’ makes integer from pointer without a cast [-Werror=int-conversion]
+     int i=hash(map, key)
+                     ^~~
+hashmap.c:26:6: note: expected ‘long int’ but argument is of type ‘char *’
+ long hash( char * key, long capacity) {
+      ^~~~
+hashmap.c:44:5: error: expected ‘,’ or ‘;’ before ‘if’
+     if( (map->buckets[i] == NULL) || (map->buckets[i]->value == NULL) ){
+     ^~
+hashmap.c:43:9: error: unused variable ‘i’ [-Werror=unused-variable]
+     int i=hash(map, key)
+         ^
+cc1: all warnings being treated as errors
+Compilation failed
+1e91603
