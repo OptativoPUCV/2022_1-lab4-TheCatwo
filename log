@@ -509,3 +509,8 @@ hashmap.c:112:26: error: ‘HashMap {aka struct HashMap}’ has no member named 
                           ^~
 Compilation failed
 1bfc065
+Fri Apr  8 19:44:45 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+78917e3
