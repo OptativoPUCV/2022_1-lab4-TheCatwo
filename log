@@ -180,3 +180,20 @@ hashmap.c:83:26: error: ‘HashMap {aka struct HashMap}’ has no member named �
 cc1: all warnings being treated as errors
 Compilation failed
 d156e71
+Fri Apr  8 04:26:20 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:79:26: error: comparison between pointer and integer [-Werror]
+             for (i = 0; i<key; i++){
+                          ^
+hashmap.c:80:30: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+                 HashMap *p = map->buckets[i];
+                              ^~~
+hashmap.c:83:26: error: ‘HashMap {aka struct HashMap}’ has no member named ‘next’
+                     q = p->next;
+                          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+db40bae
