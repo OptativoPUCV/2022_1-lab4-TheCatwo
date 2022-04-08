@@ -401,3 +401,16 @@ hashmap.c:45:22: error: initialization makes pointer from integer without a cast
 cc1: all warnings being treated as errors
 Compilation failed
 3653c16
+Fri Apr  8 16:42:19 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:11: error: too few arguments to function ‘hash’
+     int i=hash(key);
+           ^~~~
+hashmap.c:26:6: note: declared here
+ long hash( char * key, long capacity) {
+      ^~~~
+Compilation failed
+f8a0604
