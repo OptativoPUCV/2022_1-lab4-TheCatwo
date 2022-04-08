@@ -211,3 +211,25 @@ hashmap.c:83:26: error: ‘HashMap {aka struct HashMap}’ has no member named �
 cc1: all warnings being treated as errors
 Compilation failed
 7717153
+Fri Apr  8 04:28:01 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:80:29: error: invalid initializer
+                 HashMap p = map->buckets[i];
+                             ^~~
+hashmap.c:82:24: error: used struct type value where scalar is required
+                 while (p) {
+                        ^
+hashmap.c:83:26: error: invalid type argument of ‘->’ (have ‘HashMap {aka struct HashMap}’)
+                     q = p->next;
+                          ^~
+hashmap.c:84:22: error: invalid type argument of ‘->’ (have ‘HashMap {aka struct HashMap}’)
+                     p->current = 0;
+                      ^~
+hashmap.c:85:23: error: incompatible types when assigning to type ‘HashMap {aka struct HashMap}’ from type ‘HashMap * {aka struct HashMap *}’
+                     p = q;
+                       ^
+Compilation failed
+e37a7ad

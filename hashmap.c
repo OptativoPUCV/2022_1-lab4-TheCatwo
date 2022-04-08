@@ -77,7 +77,7 @@ void eraseMap(HashMap * map,  char * key) {
         if (map->buckets){
             int i = 0;
             for (i = 0; i<10; i++){
-                HashMap *p = map->buckets[i];
+                HashMap p = map->buckets[i];
                 HashMap *q = NULL;
                 while (p)	{
                     q = p->next;
