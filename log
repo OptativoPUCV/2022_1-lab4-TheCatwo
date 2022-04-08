@@ -520,3 +520,50 @@ Fri Apr  8 19:45:06 UTC 2022:
  tests:  3|4
 total_score: 30/70
 9fd5846
+Fri Apr  8 20:37:56 UTC 2022: 
+ hashmap.c | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:106:14: error: implicit declaration of function ‘linearProbing’ [-Werror=implicit-function-declaration]
+     long i = linearProbing(map, key);
+              ^~~~~~~~~~~~~
+hashmap.c:108:15: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+               ^~~~~~~
+               buckets
+hashmap.c:108:44: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+                                            ^~~~~~~
+                                            buckets
+hashmap.c:112:17: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     return map->Buckets[map->current]->value;
+                 ^~~~~~~
+                 buckets
+hashmap.c: At top level:
+hashmap.c:143:6: error: conflicting types for ‘linearProbing’
+ long linearProbing(HashMap* map, char * key){
+      ^~~~~~~~~~~~~
+hashmap.c:106:14: note: previous implicit declaration of ‘linearProbing’ was here
+     long i = linearProbing(map, key);
+              ^~~~~~~~~~~~~
+hashmap.c: In function ‘linearProbing’:
+hashmap.c:144:25: error: implicit declaration of function ‘Hash’; did you mean ‘hash’? [-Werror=implicit-function-declaration]
+     unsigned long num = Hash(key);
+                         ^~~~
+                         hash
+hashmap.c:147:19: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+                   ^~~~~~~
+                   buckets
+hashmap.c:147:48: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+                                                ^~~~~~~
+                                                buckets
+hashmap.c:150:28: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( is_equal( map->Buckets[i]->key, key) ){
+                            ^~~~~~~
+                            buckets
+cc1: all warnings being treated as errors
+Compilation failed
+e1870d9

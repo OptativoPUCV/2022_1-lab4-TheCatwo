@@ -103,7 +103,13 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+    long i = linearProbing(map, key);
 
+    if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+        return NULL;
+    }
+    map->current = i;
+    return map->Buckets[map->current]->value;
     return NULL;
 }
 
@@ -132,4 +138,22 @@ Pair * nextMap(HashMap * map) {
     }
     return NULL;
   
+}
+
+long linearProbing(HashMap* map, char * key){
+    unsigned long num = Hash(key);
+    long i = num % (map->capacity);
+    while(1){
+        if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+            break;
+        }
+        if( is_equal( map->Buckets[i]->key, key) ){
+            break;
+        }
+        i++;
+        if( i == (map->capacity)){
+            i = 0;
+        }
+    }
+    return i;
 }
