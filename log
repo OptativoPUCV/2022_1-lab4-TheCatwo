@@ -481,3 +481,9 @@ hashmap.c:59:24: error: ‘auxT’ undeclared (first use in this function); did 
 hashmap.c:59:24: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 986a1d5
+Fri Apr  8 18:46:34 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|4
+total_score: 30/70
+178d30a
