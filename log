@@ -414,3 +414,15 @@ hashmap.c:26:6: note: declared here
       ^~~~
 Compilation failed
 f8a0604
+Fri Apr  8 16:42:52 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:22: error: ‘size’ undeclared (first use in this function); did you mean ‘sinl’?
+     long i=hash(key, size);
+                      ^~~~
+                      sinl
+hashmap.c:43:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+cb5240e
