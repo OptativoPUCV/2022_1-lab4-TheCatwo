@@ -59,7 +59,7 @@ HashMap * createMap(long capacity) {
   
     int i;
 
-    for (i= 0; i<m->capacity; i++)
+    for (i= 0; i<capacity; i++)
       m->buckets[i]=NULL;
     return m;
 }
