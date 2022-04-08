@@ -85,10 +85,10 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
   
   for(long i=0; i<(map->capacity); i++){
-    if(map->hashArray[i] != NULL ){
-      if(map->hashArray[i]->value != NULL){
+    if(map->buckets[i] != NULL ){
+      if(map->buckets[i]->value != NULL){
           map->current = i;
-          return map->hashArray[map->current]->value;
+          return map->buckets[map->current]->value;
       }
     }
   }
@@ -97,11 +97,11 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
  
-    for( long i= (map->current + 1); i<(mapa->capacity); i++){
-      if( map->hashArray[i] != NULL){
-        if(map->hashArray[i]->value != NULL){
+    for( long i= (map->current + 1); i<(map->capacity); i++){
+      if( map->buckets[i] != NULL){
+        if(map->buckets[i]->value != NULL){
           map->current = i;
-          return map->hashArray[map->current]->value;
+          return map->buckets[map->current]->value;
             }
         }
     }
