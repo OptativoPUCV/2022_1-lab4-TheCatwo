@@ -263,3 +263,11 @@ hashmap.c:64:6: error: ‘HashMap {aka struct HashMap}’ has no member named �
       ^~
 Compilation failed
 bdee5d9
+Fri Apr  8 14:47:48 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+/tmp/cczGjIxo.o: In function `createMap':
+test.c:(.text+0x19b): undefined reference to `ceil'
+collect2: error: ld returned 1 exit status
+Compilation failed
+7219799
