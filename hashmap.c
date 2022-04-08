@@ -105,12 +105,11 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * searchMap(HashMap * map,  char * key) {   
     long i = linearProbing(map, key);
 
-    if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+    if( (map->Buckets[i]== NULL) || (map->Buckets[i]->value== NULL) ){
         return NULL;
     }
     map->current = i;
     return map->Buckets[map->current]->value;
-    return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
