@@ -61,7 +61,7 @@ HashMap * createMap(long capacity) {
     m->size=0;
     m->capacity=capacity;
     m->current = -1;
-    m->loadFactor= (long)ceil(total*0.77);
+    m->loadFactor= (long)ceil(capacity*0.77);
     if (!m->buckets){
       free(m);
       m= NULL;
