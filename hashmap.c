@@ -41,7 +41,7 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) {
     long i=hash(key, map->capacity);
-    if( (map->buckets[i] == NULL) || (map->buckets[i]->value == NULL) ){
+    if( (map->buckets[i]==NULL) || (map->buckets[i]->value == NULL) ){
         Pair* newP = createPair(key, value);
         map->buckets[i] = newP;
         map->size++;
@@ -59,6 +59,7 @@ void enlarge(HashMap * map) {
     for(long i=0; i < (T*2); i++){
         map->buckets[i] = NULL;
     }
+  
     map->size = 0;
     map->capacity =T*2;
 
@@ -67,10 +68,10 @@ void enlarge(HashMap * map) {
             if( aux[i]->value != NULL){
                 insertMap( map, aux[i]->key, aux[i]->value );
             }
-            free( aux[i]);
+            free(aux[i]);
         }
     }
-    free( aux);
+    free(aux);
 
 }
 
@@ -108,9 +109,9 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   
-  for(long i=0; i<(map->capacity); i++){
-    if(map->buckets[i]!= NULL ){
-      if(map->buckets[i]->value != NULL){
+    for(long i=-1; i<(mapa->total); i++){
+    if(map->buckets[i]!= NULL){
+      if(map->buckets[i]->value!= NULL){
           map->current = i;
           return map->buckets[map->current]->value;
       }
