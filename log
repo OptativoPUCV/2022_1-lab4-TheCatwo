@@ -277,3 +277,34 @@ Fri Apr  8 14:48:34 UTC 2022:
  tests:  1|5
 total_score: 10/70
 e65d26b
+Fri Apr  8 15:46:23 UTC 2022: 
+ hashmap.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:88:11: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+     if(map->hashArray[i] != NULL ){
+           ^~
+hashmap.c:89:13: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+       if(map->hashArray[i]->value != NULL){
+             ^~
+hashmap.c:91:21: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+           return map->hashArray[map->current]->value;
+                     ^~
+hashmap.c: In function ‘nextMap’:
+hashmap.c:100:41: error: ‘mapa’ undeclared (first use in this function); did you mean ‘map’?
+     for( long i= (map->current + 1); i<(mapa->capacity); i++){
+                                         ^~~~
+                                         map
+hashmap.c:100:41: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:101:14: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+       if( map->hashArray[i] != NULL){
+              ^~
+hashmap.c:102:15: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+         if(map->hashArray[i]->value != NULL){
+               ^~
+hashmap.c:104:21: error: ‘HashMap {aka struct HashMap}’ has no member named ‘hashArray’
+           return map->hashArray[map->current]->value;
+                     ^~
+Compilation failed
+bc08fb5
