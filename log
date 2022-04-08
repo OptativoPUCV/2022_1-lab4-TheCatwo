@@ -449,3 +449,23 @@ Fri Apr  8 17:36:20 UTC 2022:
  tests:  2|5
 total_score: 20/70
 9dc26ad
+Fri Apr  8 18:45:35 UTC 2022: 
+ hashmap.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:56:14: error: ‘mapa’ undeclared (first use in this function); did you mean ‘map’?
+     long T = mapa->capacity;
+              ^~~~
+              map
+hashmap.c:56:14: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:58:30: error: ‘auxT’ undeclared (first use in this function); did you mean ‘aux’?
+     mapa->buckets = malloc( (auxT*2) * sizeof(mapa->buckets) );
+                              ^~~~
+                              aux
+hashmap.c:73:11: error: ‘auxA’ undeclared (first use in this function); did you mean ‘auxT’?
+     free( auxA);
+           ^~~~
+           auxT
+Compilation failed
+c1948a1

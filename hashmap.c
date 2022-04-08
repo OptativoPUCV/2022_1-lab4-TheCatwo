@@ -51,7 +51,26 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+  
+    Pair** aux = map->buckets;
+    long T = mapa->capacity;
 
+    mapa->buckets = malloc( (auxT*2) * sizeof(mapa->buckets) );
+    for(long i=0; i < (auxT*2); i++){
+        mapa->buckets[i] = NULL;
+    }
+    mapa->size = 0;
+    mapa->capacity =T*2;
+
+    for( long i=0; i <T; i++ ){
+        if( aux[i] != NULL){
+            if( aux[i]->value != NULL){
+                insertMap( map, aux[i]->key, aux[i]->value );
+            }
+            free( aux[i]);
+        }
+    }
+    free( auxA);
 
 }
 
@@ -90,7 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
   
   for(long i=0; i<(map->capacity); i++){
-    if(map->buckets[i] != NULL ){
+    if(map->buckets[i]!= NULL ){
       if(map->buckets[i]->value != NULL){
           map->current = i;
           return map->buckets[map->current]->value;
