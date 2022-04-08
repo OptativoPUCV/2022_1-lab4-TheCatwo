@@ -109,7 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   
-    for(long i=-1; i<(mapa->total); i++){
+    for(long i=-1; i<(map->total); i++){
     if(map->buckets[i]!= NULL){
       if(map->buckets[i]->value!= NULL){
           map->current = i;

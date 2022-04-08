@@ -499,3 +499,13 @@ hashmap.c:112:23: error: ‘mapa’ undeclared (first use in this function); did
 hashmap.c:112:23: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 56695d0
+Fri Apr  8 19:44:25 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:112:26: error: ‘HashMap {aka struct HashMap}’ has no member named ‘total’
+     for(long i=-1; i<(map->total); i++){
+                          ^~
+Compilation failed
+1bfc065
