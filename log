@@ -360,3 +360,25 @@ hashmap.c:43:9: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 b19e896
+Fri Apr  8 16:41:20 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:11: error: too few arguments to function ‘hash’
+     int i=hash(key);
+           ^~~~
+hashmap.c:26:6: note: declared here
+ long hash( char * key, long capacity) {
+      ^~~~
+hashmap.c:45:22: error: implicit declaration of function ‘crearPair’; did you mean ‘createPair’? [-Werror=implicit-function-declaration]
+         Pair* newP = crearPair(key, value);
+                      ^~~~~~~~~
+                      createPair
+hashmap.c:45:22: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+hashmap.c:47:12: error: ‘HashMap {aka struct HashMap}’ has no member named ‘contN’
+         map->contN++;
+            ^~
+cc1: all warnings being treated as errors
+Compilation failed
+adff8bd
