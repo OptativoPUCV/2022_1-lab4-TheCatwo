@@ -53,14 +53,14 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
   
     Pair** aux = map->buckets;
-    long T = mapa->capacity;
+    long T = map->capacity;
 
-    mapa->buckets = malloc( (auxT*2) * sizeof(mapa->buckets) );
+    map->buckets = malloc( (T*2) * sizeof(map->buckets) );
     for(long i=0; i < (auxT*2); i++){
-        mapa->buckets[i] = NULL;
+        map->buckets[i] = NULL;
     }
-    mapa->size = 0;
-    mapa->capacity =T*2;
+    map->size = 0;
+    map->capacity =T*2;
 
     for( long i=0; i <T; i++ ){
         if( aux[i] != NULL){
@@ -70,7 +70,7 @@ void enlarge(HashMap * map) {
             free( aux[i]);
         }
     }
-    free( auxA);
+    free( aux);
 
 }
 

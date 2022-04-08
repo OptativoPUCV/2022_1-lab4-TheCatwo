@@ -469,3 +469,15 @@ hashmap.c:73:11: error: ‘auxA’ undeclared (first use in this function); did 
            auxT
 Compilation failed
 c1948a1
+Fri Apr  8 18:46:18 UTC 2022: 
+ hashmap.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:59:24: error: ‘auxT’ undeclared (first use in this function); did you mean ‘aux’?
+     for(long i=0; i < (auxT*2); i++){
+                        ^~~~
+                        aux
+hashmap.c:59:24: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+986a1d5
