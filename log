@@ -618,3 +618,61 @@ hashmap.c:113:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 cf99381
+Sat Apr  9 16:48:36 UTC 2022: 
+ hashmap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:106:14: error: implicit declaration of function ‘linearProbing’ [-Werror=implicit-function-declaration]
+     long i = linearProbing(map, key);
+              ^~~~~~~~~~~~~
+hashmap.c:108:15: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     if( (map->Buckets[i]== NULL) || (map->Buckets[i]->value== NULL) ){
+               ^~~~~~~
+               buckets
+hashmap.c:108:43: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     if( (map->Buckets[i]== NULL) || (map->Buckets[i]->value== NULL) ){
+                                           ^~~~~~~
+                                           buckets
+hashmap.c:112:17: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+     return map->Buckets[map->current]->value;
+                 ^~~~~~~
+                 buckets
+hashmap.c: At top level:
+hashmap.c:142:6: error: conflicting types for ‘linearProbing’
+ long linearProbing(HashMap* map, char * key){
+      ^~~~~~~~~~~~~
+hashmap.c:106:14: note: previous implicit declaration of ‘linearProbing’ was here
+     long i = linearProbing(map, key);
+              ^~~~~~~~~~~~~
+hashmap.c: In function ‘linearProbing’:
+hashmap.c:143:25: error: implicit declaration of function ‘stringHash’; did you mean ‘strsignal’? [-Werror=implicit-function-declaration]
+     unsigned long num = stringHash(key);
+                         ^~~~~~~~~~
+                         strsignal
+hashmap.c:146:19: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+                   ^~~~~~~
+                   buckets
+hashmap.c:146:48: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
+                                                ^~~~~~~
+                                                buckets
+hashmap.c:149:28: error: ‘HashMap {aka struct HashMap}’ has no member named ‘Buckets’; did you mean ‘buckets’?
+         if( is_equal( map->Buckets[i]->key, key) ){
+                            ^~~~~~~
+                            buckets
+hashmap.c: At top level:
+hashmap.c:160:15: error: conflicting types for ‘stringHash’
+ unsigned long stringHash(void* key){
+               ^~~~~~~~~~
+hashmap.c:143:25: note: previous implicit declaration of ‘stringHash’ was here
+     unsigned long num = stringHash(key);
+                         ^~~~~~~~~~
+hashmap.c: In function ‘searchMap’:
+hashmap.c:113:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+9d0abae

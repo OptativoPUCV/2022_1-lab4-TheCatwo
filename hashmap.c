@@ -140,7 +140,7 @@ Pair * nextMap(HashMap * map) {
 }
 
 long linearProbing(HashMap* map, char * key){
-    unsigned long num = Hash(key);
+    unsigned long num = stringHash(key);
     long i = num % (map->capacity);
     while(1){
         if( (map->Buckets[i] == NULL) || (map->Buckets[i]->value == NULL) ){
@@ -155,4 +155,14 @@ long linearProbing(HashMap* map, char * key){
         }
     }
     return i;
+}
+
+unsigned long stringHash(void* key){
+    const char* A_key= key;
+    unsigned long num= 5381;
+    for(int i=0; A_key[i] != '\0'; i++){
+        num *= 33;
+        num += A_key[i];
+    }
+    return num;
 }
